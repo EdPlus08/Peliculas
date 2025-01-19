@@ -1,10 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Barra de búsqueda -->
+<div class="search-bar" style="display: flex; justify-content: center; margin-top: 20px;">
+    <input type="text" id="search" placeholder="Buscar película..." onkeyup="searchMovies()" style="padding: 10px 20px; font-size: 16px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+</div>
+
+<script>
+    function searchMovies() {
+        var input, filter, container, movies, movieTitle, i, txtValue;
+        input = document.getElementById('search');
+        filter = input.value.toUpperCase();
+        container = document.querySelector('.container');
+        movies = container.querySelectorAll('.movie');
+        
+        for (i = 0; i < movies.length; i++) {
+            movieTitle = movies[i].getElementsByTagName('h2')[0];
+            txtValue = movieTitle.textContent || movieTitle.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                movies[i].style.display = "";
+            } else {
+                movies[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Películas</title>
     <style>
+        
         
         body {
             font-family: Arial, sans-serif;
@@ -70,12 +96,12 @@
             <a href="https://ia802309.us.archive.org/35/items/venom.-1080p.-latino/Venom.1080p.Latino.ia.mp4" target="_blank">Descargar Película</a>
         </div>
         <div class="movie">
-            <h2>Nombre: Venom: Carnage Liberado</h2>
+            <h2>Nombre: Venom - Carnage Liberado</h2>
             <p>Resumen: Eddie Brock lucha por equilibrar su vida con el simbionte Venom mientras intenta revivir su carrera como periodista. Sin embargo, su mayor desafío llega cuando Cletus Kasady, un asesino en serie, se convierte en el letal Carnage tras fusionarse con otro simbionte.</p>
             <a href="https://dn720409.ca.archive.org/0/items/venom-carnage-liberado-hd-720p-1394309/Venom__Carnage_liberado_HD__720p___1394309.mp4" target="_blank">Descargar Película</a>
         </div>
         <div class="movie">
-            <h2>Nombre: Venom: El Último Baile</h2>
+            <h2>Nombre: Venom - El Último Baile</h2>
             <p>Resumen: concluye la trilogía de Venom, donde Eddie Brock y el simbionte enfrentan a Knull, el dios de los simbiontes, en una batalla épica.</p>
             <a href="https://ia600803.us.archive.org/12/items/selecciona-el-reproductor-venom-el-ultimo-baile-repelis-plus/Selecciona%20el%20reproductor%20Venom%20El%20%C3%BAltimo%20baile%20-%20REPELIS%20PLUS.mp4" target="_blank">Descargar Película</a>
         </div>
@@ -139,7 +165,63 @@
             <h2>Nombre: Gru - Mi Villano Favorito 4</h2>
             <p>Resumen: CONTRASEÑA: ANTINOMIA24 </p>
             <a href="https://mega.nz/file/XE9kzZKY#tFQPwgiY1J0Sg8FOIafSgC9RAfywHVLL1NhE-2pWVIQ" target="_blank">Descargar Película</a>
-        </div>a
+        </div>
+        <div class="movie">
+            <h2>Nombre: DeadPool y Wolverine</h2>
+            <p>Resumen: Deadpool & Wolverine (Deadpool y Lobezno en España) es una película de superhéroes estadounidense basada en Marvel Comics, con los personajes Deadpool y Wolverine, producida por Marvel Studios, Maximum Effort, y 21 Laps Entertainment, y distribuida por Walt Disney Studios Motion Pictures. Es la película número 34 del Universo cinematográfico de Marvel (UCM) y una secuela de Deadpool (2016) y Deadpool 2 (2018). La película fue dirigida por Shawn Levy a partir de un guion que escribió con Ryan Reynolds, Rhett Reese, Paul Wernick, y Zeb Wells. Reynolds y Hugh Jackman interpretan a Wade Wilson / Deadpool y Logan / Wolverine, respectivamente, junto a Emma Corrin, Morena Baccarin, Rob Delaney, Leslie Uggams, Aaron Stanford, y Matthew Macfadyen. En la película, Deadpool se entera de que la «Time Variance Authority» (TVA)nota 1​ está dispuesta a destruir su universo natal y trabaja con un reacio Wolverine de otro universo para detenerlo. </p>
+            <a href="https://www.mediafire.com/file/yevyeod0mhcap1w/DNW2024.RAR/file" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Toy Story 4</h2>
+            <p>Resumen: Toy Story 4 es una película de comedia dramática hecha por computadora estadounidense de 2019, es la cuarta entrega de la saga de animación Toy Story y la secuela de Toy Story 3 (2010). Está producida por Pixar Animation Studios, y fue lanzada por Walt Disney Pictures. La cinta fue dirigida por Josh Cooley y producida por John Lasseter, director de Toy Story (1995) y Toy Story 2 (1999). La historia fue concebida por el equipo de redacción del Toy Story original: Lasseter, Pete Docter, Andrew Stanton y Lee Unkrich.4​ La película cuenta con las voces de Tom Hanks, Tim Allen, Annie Potts, Tony Hale, Christina Hendricks, Keanu Reeves, Ally Maki, Keegan-Michael Key, Jordan Peele, Madeleine McGraw, Jay Hernández, Lori Alan y Joan Cusack. </p>
+            <a href="https://www.mediafire.com/file/rgxdspuvvn1pry1/Toy_Story_4_HD_720p_Latino_%5BMundoProHD%5D.mkv/file" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Avengers Endgame</h2>
+            <p>Resumen: Avengers: Endgame (Vengadores: Endgame en España)2​ es una película de superhéroes estadounidense de 2019 basada en el equipo de superhéroes de Marvel Comics, Los Vengadores. Producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures, es la secuela directa de Avengers: Infinity War (2018) y la película número 22 del Universo cinematográfico de Marvel (UCM), y hasta la fecha la más larga. Dirigida por Anthony y Joe Russo y escrita por Christopher Markus y Stephen McFeely, la película cuenta con un reparto coral que incluye a Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd, Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong, Jon Favreau, Bradley Cooper, Gwyneth Paltrow y Josh Brolin. En la película, los miembros supervivientes de los Vengadores y sus aliados intentan revertir el daño causado por Thanos en Infinity War. </p>
+            <a href="https://www.mediafire.com/file/yxzn6ij6dwohm0i/Avengers_Endgame_-By_Daxler328.rar/file" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Capitan America - Primer Vengador</h2>
+            <p>Resumen:  Capitán América: el primer vengador (título original en inglés: Captain America: The First Avenger) es una película de superhéroes estadounidense de 2011 basada en el personaje homónimo de Marvel Comics, producida por Marvel Studios y distribuida por Paramount Pictures.a​ Es la quinta entrega del universo cinematográfico de Marvel. La cinta fue dirigida por Joe Johnston, con un guion de Christopher Markus y Stephen McFeely, y protagonizada por Chris Evans, Hugo Weaving, Hayley Atwell, Sebastian Stan, Dominic Cooper, Neal McDonough, Derek Luke, Kenneth Choi, Stanley Tucci, y Tommy Lee Jones. El filme transcurre en su mayor parte durante la Segunda Guerra Mundial, y cuenta la historia de Steve Rogers, un hombre enfermizo de Brooklyn que se transforma en el super soldado Capitán América para ayudar en la guerra. Rogers debe detener a Red Skull, el despiadado jefe de armamento de Adolf Hitler y el líder de una organización llamada HYDRA, que pretende usar un artefacto llamado el «Teseracto»b​ como una fuente de energía para dominar el mundo.</p>
+            <a href="https://www.mediafire.com/file/tl7f2quk2se69zb/S7anC-CA1.mkv/file" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Iron Man 1</h2>
+            <p>Resumen: Iron Man (titulada Iron Man: el hombre de hierro en Hispanoamérica) es una película de superhéroes de 2008. Es la primera entrega del Universo cinematográfico de Marvel. La cinta fue dirigida por Jon Favreau, con un guion de Mark Fergus, Hawk Ostby, Art Marcum y Matt Holloway. Es protagonizada por Robert Downey Jr, Terrence Howard, Jeff Bridges, Shaun Toub y Gwyneth Paltrow.
+
+                La trama gira en torno a Tony Stark, un empresario e ingeniero, que construye un exoesqueleto motorizado y se convierte en Iron Man, un superhéroe tecnológicamente avanzado </p>
+            <a href="https://www.mediafire.com/file/xvqwes8pbhcwn5p/Iron+Man.mp4" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: El Increible Hulk </h2>
+            <p>Resumen: The Incredible Hulk (titulada El increíble Hulk o La Masa: Un hombre increíble en España y Hulk: El hombre increíble en Hispanoamérica) es una película de superhéroes estadounidense de 2008 basada en el personaje Hulk, de Marvel Comics, producida por Marvel Studios y distribuida por Universal Pictures. Es la segunda entrega del Universo cinematográfico de Marvel. La cinta fue dirigida por Louis Leterrier, con un guion de Zak Penn, y es protagonizada por Edward Norton, Liv Tyler, Tim Roth, Tim Blake Nelson, Ty Burrell y William Hurt </p>
+            <a href="https://mega.nz/file/S0JHVIYC#RIdoer4UJefkYOgLmr9o7eEYCBwbSyhXApyAup4Ytfs" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Capitana Marvel</h2>
+            <p>Resumen: Capitana Marvel es una película de Marvel Studios que sigue el viaje de Carol Danvers (Brie Larson) donde se convierte en uno de los héroes más poderosos del universo12. La historia se sitúa en la década de 1990 y es una aventura completamente nueva en un período nunca antes visto en la historia del Universo Cinematográfico Marvel (UCM)1. Carol Danvers es una increíble piloto que por un acto de azar obtiene superpoderes de orígenes alienígenas y termina convirtiéndose en la más fuerte de Los Vengadores </p>
+            <a href="https://www.mediafire.com/file/i583hcltu8n0p6i/Si+lo+ves+desde+otro+canal+que+no+es+Adrian+velazquez%2C+me+robaron+el+link.mp4" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Thor 2 - Un Mundo Oscuro</h2>
+            <p>Resumen: Thor: The Dark World (titulada Thor: un mundo oscuro en Hispanoamérica y Thor: el mundo oscuro en España) es una película de superhéroes estadounidense de 2013 basada en el personaje de Marvel Comics Thor, producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures. Es la secuela de Thor (2011) y la octava película en el Universo cinematográfico de Marvel (UCM). La película es dirigida por Alan Taylor, con un guion de Christopher Yost, Christopher Markus y Stephen McFeely.5​ Es protagonizada por Chris Hemsworth como Thor, junto a Natalie Portman, Tom Hiddleston, Anthony Hopkins, Stellan Skarsgård, Idris Elba, Christopher Eccleston, Adewale Akinnuoye-Agbaje, Kat Dennings, Ray Stevenson, Zachary Levi, Tadanobu Asano, Jaimie Alexander y Rene Russo. En Thor: The Dark World, Thor se une a Loki para salvar los Nueve Reinos de los elfos oscuros al mando del vengativo Malekith, que pretende hundir al universo en la oscuridad. </p>
+            <a href="https://mega.nz/file/51lXiAJC#stdS96amXlS8-mgdLbB5LgxkD5l1SX6mq84tNWXXyUA" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Thor 1 </h2>
+            <p>Resumen: Thor es una película de superhéroes estadounidense de 2011 basada en el personaje homónimo de Marvel Comics, producida por Marvel Studios y distribuida por Paramount Pictures.b​Siendo la cuarta entrega del universo cinematográfico de Marvel, la cinta fue dirigida por Kenneth Branagh, con un guion de Ashley Edward Miller, Zack Stentz y Don Payne. Está protagonizada por Chris Hemsworth, Tom Hiddleston, Natalie Portman, Stellan Skarsgård, Idris Elba, Jaimie Alexander, Colm Feore, Rene Russo, Anthony Hopkins. El filme cuenta la historia de Thor, el príncipe heredero de Asgard, que es exiliado de su hogar a la Tierra. Estando allí, forma una relación con Jane Foster, una científica. Sin embargo, Thor debe detener a su hermano adoptivo Loki, que pretende convertirse en el nuevo rey de Asgard. </p>
+            <a href="https://mega.nz/file/lsdRVa5I#KrfF8UJ1S9OkYGCGJIBAfdw6MDzPy0s9ptLoZaz6lO8" target="_blank">Descargar Película</a>
+        </div>
+        <div class="movie">
+            <h2>Nombre: Thor Ragnarok</h2>
+            <p>Resumen: Thor: Ragnarok es una película de superhéroes estadounidense de 2017 basada en el personaje de Marvel Comics Thor, producida por Marvel Studios y distribuida por Walt Disney Studios Motion Pictures. Es la secuela de Thor (2011) y Thor: The Dark World (2013), y la decimoséptima película en el Universo cinematográfico de Marvel (UCM). La película es dirigida por Taika Waititi a partir de un guion de Eric Pearson y los guionistas Craig Kyle y Christopher L. Yost, y es protagonizada por Chris Hemsworth, Tom Hiddleston, Cate Blanchett, Idris Elba, Jeff Goldblum, Tessa Thompson, Karl Urban, Mark Ruffalo y Anthony Hopkins. En Thor: Ragnarok, Thor debe escapar del planeta alienígena Sakaar a tiempo para salvar Asgard de Hela y prevenir el inminente Ragnarök. </p>
+            <a href="https://mega.nz/folder/W4YzySZJ#rXiwCUq0ps8haI4sYXyZ_Q" target="_blank">Descargar Película</a>
+        </div>
+        
+
+
+                                  PROXIMAMENTE MAS PELICULAS..............
         
                         
     </div>
