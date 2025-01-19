@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Barra de búsqueda -->
-<div class="search-bar" style="display: flex; justify-content: center; margin-top: 20px;">
+    
+   <!-- Barra de búsqueda con icono de WhatsApp -->
+<div class="search-bar" style="display: flex; justify-content: center; align-items: center; margin-top: 20px; gap: 10px;">
     <input type="text" id="search" placeholder="Buscar película..." onkeyup="searchMovies()" style="padding: 10px 20px; font-size: 16px; width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+    <a href="https://wa.me/50761747375" target="_blank" style="margin-left: 10px; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 30px; height: 30px;">
+    </a>
+    <a href="mailto:serviciosedplus@gmail.com" target="_blank" style="margin-left: 10px; text-decoration: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" style="width: 30px; height: 30px;">
+    </a>
+    <!-- Ícono de TikTok -->
+<a href="https://www.tiktok.com/@edplus_" target="_blank">
+    <i class="fab fa-tiktok"></i>
+</a>
+
+<!-- Estilo para el ícono de TikTok más pequeño y desplazado -->
+<style>
+    .fa-tiktok {
+        color: #fff;
+        font-size: 16px; /* Tamaño del ícono ajustado */
+        text-shadow: 15px 15px #ff3353fc, -15px -15px cyan; /* Efecto de sombra */
+        margin-left: 0.5cm; /* Mover hacia la derecha */
+    }
+</style>
+
+<!-- Enlace para FontAwesome (si aún no lo has agregado) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <script>
@@ -14,17 +45,25 @@
         container = document.querySelector('.container');
         movies = container.querySelectorAll('.movie');
         
+        let found = false;
         for (i = 0; i < movies.length; i++) {
             movieTitle = movies[i].getElementsByTagName('h2')[0];
             txtValue = movieTitle.textContent || movieTitle.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 movies[i].style.display = "";
+                found = true;
             } else {
                 movies[i].style.display = "none";
             }
         }
+
+        if (!found && filter.trim() !== "") {
+            alert("Escríbenos para agregar esta película");
+        }
     }
 </script>
+
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -221,7 +260,6 @@
         
 
 
-                                  PROXIMAMENTE MAS PELICULAS..............
         
                         
     </div>
